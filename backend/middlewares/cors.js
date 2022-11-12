@@ -1,16 +1,12 @@
 const allowedCors = [
   'http://myfirstdomainand.nomoredomains.icu/',
   'https://myfirstdomainand.nomoredomains.icu/',
-  'http://localhost:3000/',
 ];
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 module.exports.cors = (req, res, next) => {
   const { method } = req;
   const { origin } = req.headers;
-  console.log(req)
-  console.log(req.headers)
-  console.log('done')
 
   const requestHeaders = req.headers['access-control-request-headers'];
   if (allowedCors.includes(origin)) {
