@@ -11,6 +11,7 @@ const { login, createUser, logout } = require('./controllers/users');
 const errorHandler = require('./middlewares/errorHandler');
 const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { cors } = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -25,6 +26,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
+app.use(cors);
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().min(5).required().email(),
