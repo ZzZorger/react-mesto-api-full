@@ -1,7 +1,7 @@
 const allowedCors = [
   'http://myfirstdomainand.nomoredomains.icu/',
   'https://myfirstdomainand.nomoredomains.icu/',
-  'localhost:3000',
+  'http://localhost:3000/',
 ];
 
 module.exports.cors = (req, res, next) => {
