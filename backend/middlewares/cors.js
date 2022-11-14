@@ -1,5 +1,6 @@
 const allowedCors = [
-  'http://myfirstdomainand.nomoredomains.icu/',
+  'http://myfirstdomainand.nomoredomains.icu/users/me',
+  'http://myfirstdomainand.nomoredomains.icu/cards',
 ];
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
