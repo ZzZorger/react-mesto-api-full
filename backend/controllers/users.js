@@ -12,7 +12,6 @@ module.exports.getUser = (req, res, next) => {
     .catch((err) => next(err));
 };
 module.exports.getUserMe = (req, res, next) => {
-  console.dir('done')
   User.findById(req.user._id)
     .then((user) => {
       const {
