@@ -12,7 +12,7 @@ module.exports.getUser = (req, res, next) => {
     .catch((err) => next(err));
 };
 module.exports.getUserMe = (req, res, next) => {
-  console.log('done')
+  console.dir('done')
   User.findById(req.user._id)
     .then((user) => {
       const {
@@ -99,18 +99,15 @@ module.exports.updateAvatar = (req, res, next) => {
     });
 };
 module.exports.login = (req, res, next) => {
-  console.log('done')
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      console.log('done')
       const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
       res.status(200).cookie('token', token, { maxAge: 3600000 * 24 * 7, httpOnly: true }).send({ token });
     })
     .catch(next);
 };
 module.exports.logout = (req, res, next) => {
-  console.log('done')
   res.clearCookie('token').send({ message: 'Выход' })
     .catch(next);
 };
