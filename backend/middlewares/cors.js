@@ -9,6 +9,7 @@ const allowedCors = [
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 module.exports.cors = (req, res, next) => {
+  console.log('done')
   const { method } = req;
   const { origin } = req.headers;
 
