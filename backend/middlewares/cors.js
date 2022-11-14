@@ -1,7 +1,7 @@
 const allowedCors = [
   'http://myfirstdomainand.nomoredomains.icu',
 ];
-const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
+const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST';
 
 module.exports.cors = (req, res, next) => {
   const { method } = req;
