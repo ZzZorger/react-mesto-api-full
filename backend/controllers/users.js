@@ -12,6 +12,7 @@ module.exports.getUser = (req, res, next) => {
     .catch((err) => next(err));
 };
 module.exports.getUserMe = (req, res, next) => {
+  console.log(req.headers)
   User.findById(req.user._id)
     .then((user) => {
       const {
@@ -98,7 +99,6 @@ module.exports.updateAvatar = (req, res, next) => {
     });
 };
 module.exports.login = (req, res, next) => {
-  console.log(req.headers)
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
