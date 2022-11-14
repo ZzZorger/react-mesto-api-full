@@ -12,7 +12,7 @@ module.exports.getUser = (req, res, next) => {
     .catch((err) => next(err));
 };
 module.exports.getUserMe = (req, res, next) => {
-  console.log(req.headers)
+  console.log('done')
   User.findById(req.user._id)
     .then((user) => {
       const {
@@ -99,6 +99,7 @@ module.exports.updateAvatar = (req, res, next) => {
     });
 };
 module.exports.login = (req, res, next) => {
+  console.log('done')
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
@@ -108,6 +109,7 @@ module.exports.login = (req, res, next) => {
     .catch(next);
 };
 module.exports.logout = (req, res, next) => {
+  console.log('done')
   res.clearCookie('token').send({ message: 'Выход' })
     .catch(next);
 };
