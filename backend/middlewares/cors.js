@@ -1,6 +1,6 @@
 const allowedCors = [
-  'http://myfirstdomainand.nomoredomains.icu/',
-  'https://myfirstdomainand.nomoredomains.icu/',
+  'http://myfirstdomainand.nomoredomains.icu',
+  'https://myfirstdomainand.nomoredomains.icu',
   'http://localhost:3000/',
 ];
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
