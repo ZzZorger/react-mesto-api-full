@@ -110,6 +110,6 @@ module.exports.login = (req, res, next) => {
 };
 module.exports.logout = (req, res, next) => {
   // res.clearCookie('token').send({ message: 'Выход' })
-  res.clearCookie('token').send({ message: res })
+  res.clearCookie('token').send({ data: res })
     .catch(next);
 };
