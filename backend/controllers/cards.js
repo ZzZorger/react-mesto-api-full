@@ -70,7 +70,8 @@ module.exports.dislikeCard = (req, res, next) => {
     { new: true },
   )
     .orFail(new NotFoundError('Передан несуществующий _id карточки'))
-    .then(() => res.status(200).send({ message: 'С карточки снят лайк' }))
+    // .then(() => res.status(200).send({ message: 'С карточки снят лайк' }))
+    .then((newCard) => res.status(200).send(newCard))
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new BadRequestError('Переданы некорректные данные для снятия лайка'));
